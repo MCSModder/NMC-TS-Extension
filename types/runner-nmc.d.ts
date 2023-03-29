@@ -78,7 +78,7 @@ export interface NMCRunner {
    * @param funcName 方法名称
    * @returns 异步调用，需要添加 await 关键字
    */
-  RunJS: (src: string, funcName: string) => Result;
+  RunJS(src: string, funcName: string): Result;
 
   /**
    * 运行指定的 JavaScript 命令
@@ -87,7 +87,7 @@ export interface NMCRunner {
    * @param funcName 方法名称
    * @returns 异步调用，需要添加 await 关键字
    */
-  运行JS: (src: string, funcName: string) => Result;
+  运行JS(src: string, funcName: string): Result;
 
   /**
    * 运行指定的 JavaScript 命令
@@ -96,7 +96,7 @@ export interface NMCRunner {
    * @param funcName 方法名称
    * @returns 异步调用，需要添加 await 关键字
    */
-  RunJavaScript: (src: string, funcName: string) => Result;
+  RunJavaScript(src: string, funcName: string): Result;
 
   /**
    * 运行指定的 JavaScript 命令
@@ -105,5 +105,113 @@ export interface NMCRunner {
    * @param funcName 方法名称
    * @returns 异步调用，需要添加 await 关键字
    */
-  运行JavaScript: (src: string, funcName: string) => Result;
+  运行JavaScript(src: string, funcName: string): Result;
+}
+export enum EJuLingZhen {
+  下品 = 1,
+  中品,
+  上品,
+}
+
+enum EFightBuffType {
+  玩家,
+  敌方,
+}
+interface NMCRunner {
+  /**
+   * 设置聚灵阵
+   *
+   * @param {number} id 洞府ID
+   * @param {EJuLingZhen} level 聚灵阵等级
+   * @returns {Result}
+   */
+  SetDongFuJuLingZhen(id: number, level: EJuLingZhen): Result;
+  /**
+   * 设置聚灵阵
+   *
+   * @param {number} id 洞府ID
+   * @param {numbEJuLingZhener} level 聚灵阵等级
+   * @returns {Result}
+   */
+  设置洞府聚灵阵(id: number, level: EJuLingZhen): Result;
+  /**
+   * 加载洞府
+   *
+   * @param id 洞府ID
+   * @returns {Result}
+   */
+  SetLoadDongFu(id: number): Result;
+  /**
+   * 加载洞府
+   *
+   * @param id 洞府ID
+   * @returns {Result}
+   */
+  加载洞府(id: number): Result;
+  /**
+   * 设置新洞府
+   *
+   * @param id 洞府ID
+   * @param level 聚灵阵等级
+   * @param name 洞府ID
+   * @returns {Result}
+   */
+  SetNewDongFu(id: number, level: EJuLingZhen, name: string): Result;
+  /**
+   * 设置新洞府
+   *
+   * @param id 洞府ID
+   * @param level 聚灵阵等级
+   * @param name 洞府ID
+   * @returns {Result}
+   */
+  设置新洞府(id: number, level: EJuLingZhen, name: string): Result;
+
+  /**
+   * 增加战斗Buff
+   * 只有下一场战斗有效
+   * @date 2023/3/29 - 16:18:42
+   * ```ts
+   * runner.AddFightBuff(EFightBuffType.玩家,"1000:1","1000:10","1000")
+   * ```
+   * @param {EFightBuffType} target 目标
+   * @param {...string[]} buffIDList Buff编号列表 Buff编号:Buff数量(默认不填为1) ```"1000" 等价 "1000:1"```
+   * @returns {Result}
+   */
+  AddFightBuff(target: EFightBuffType, ...buffList: string[]): Result;
+  /**
+   * 增加战斗Buff
+   * 只有下一场战斗有效
+   * @date 2023/3/29 - 16:18:42
+   * ```ts
+   * runner.增加战斗Buff(EFightBuffType.玩家,"1000:1","1000:10","1000")
+   * ```
+   * @param {EFightBuffType} target 目标
+   * @param {...string[]} buffIDList Buff编号列表 Buff编号:Buff数量(默认不填为1) ```"1000" 等价 "1000:1"```
+   * @returns {Result}
+   */
+  增加战斗Buff(target: EFightBuffType, ...buffList: string[]): Result;
+
+  /**
+   * 设置战斗时玩家自定义立绘
+   * 只有对同性的立绘参数有效
+   * @date 2023/3/29 - 16:29:41
+   * ```ts
+   *  runner.SetFightCustomFace(7200)
+   * ```
+   * @param {number} faceId 设置 0 还原立绘 -1 不变 自定义立绘ID(要去CustomFace文件夹找对应文件id)
+   * @returns {Result}
+   */
+  SetFightCustomFace(faceId: number): Result;
+  /**
+   * 设置战斗时玩家自定义立绘
+   * 只有对同性的立绘参数有效
+   * @date 2023/3/29 - 16:29:41
+   * ```ts
+   *  runner.自定义战斗立绘(7200)
+   * ```
+   * @param {number} faceId 设置 0 还原立绘 -1 不变 自定义立绘ID(要去CustomFace文件夹找对应文件id)
+   * @returns {Result}
+   */
+  自定义战斗立绘(faceId: number): Result;
 }
