@@ -113,7 +113,7 @@ export enum EJuLingZhen {
   上品,
 }
 
-enum EFightBuffType {
+export enum EFightBuffType {
   玩家,
   敌方,
 }
