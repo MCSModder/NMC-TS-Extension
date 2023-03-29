@@ -4,39 +4,6 @@
 type Result = Promise<void>;
 
 /**
- * 对话
- * ```typescript
- * const { 旁白 } = StoryManager;
- * 旁白("测试文本")
- * 旁白`测试文本`
- * ```
- */
-type Say = {
-  /**
-   * StoryManager 标签 {@link StoryManager}.
-   * ```typescript
-   * const { 旁白 } = StoryManager;
-   * 旁白("测试文本")
-   * ```
-   * @param text 模板字符串数组
-   */
-  (text: string): Result;
-  /**
-   * StoryManager 标签 {@link StoryManager}.
-   * ```typescript
-   * const { 旁白 } = StoryManager;
-   * 旁白`测试文本`
-   * ```
-   * @param template 模板字符串数组
-   * @param param
-   */
-  (
-    template: TemplateStringsArray,
-    ...param: Parameters<(...s: any[]) => any>
-  ): Result;
-};
-
-/**
  * 对话管理器类型
  * ```typescript
  * const { 旁白 } = StoryManager;
@@ -45,7 +12,36 @@ type Say = {
  * ```
  */
 type StoryManager = {
-  [name in string]: Say;
+  [name in string]: {
+    /**
+     * StoryManager 标签 {@link StoryManager}.
+     * ```typescript
+     * const { 旁白 } = StoryManager;
+     * 旁白("测试文本")
+     * ```
+     * @param text 模板字符串数组
+     */
+    (text: string): Result;
+    /**
+     * StoryManager 标签 {@link StoryManager}.
+     * ```typescript
+     * const { 旁白 } = StoryManager;
+     * 旁白`测试文本`
+     * ```
+     * @param template 模板字符串数组
+     * @param param
+     */
+    (template: TemplateStringsArray, ...param: any[]): Result;
+    /**
+     * StoryManager 标签 {@link StoryManager}.
+     * ```typescript
+     * const { 旁白 } = StoryManager;
+     * 旁白`测试文本`
+     * ```
+     * @param template 模板字符串数组
+     */
+    (template: TemplateStringsArray): Result;
+  };
 };
 
 export enum EJuLingZhen {
@@ -73,7 +69,6 @@ export interface NMCRunner {
    * tag 标签 {@link StoryManager}.
    */
   StoryManager: StoryManager;
-
   /**
    * 对话管理器
    * ```typescript
@@ -129,7 +124,6 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetDongFuJuLingZhen(id: number, level: EJuLingZhen): Result;
-
   /**
    * 设置聚灵阵
    *
@@ -138,7 +132,6 @@ export interface NMCRunner {
    * @returns {Result}
    */
   设置洞府聚灵阵(id: number, level: EJuLingZhen): Result;
-
   /**
    * 加载洞府
    *
@@ -146,7 +139,6 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetLoadDongFu(id: number): Result;
-
   /**
    * 加载洞府
    *
@@ -154,7 +146,6 @@ export interface NMCRunner {
    * @returns {Result}
    */
   加载洞府(id: number): Result;
-
   /**
    * 设置新洞府
    *
@@ -164,7 +155,6 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetNewDongFu(id: number, level: EJuLingZhen, name: string): Result;
-
   /**
    * 设置新洞府
    *
@@ -178,7 +168,6 @@ export interface NMCRunner {
   /**
    * 增加战斗Buff
    * 只有下一场战斗有效
-   * @date 2023/3/29 - 16:18:42
    * ```ts
    * runner.AddFightBuff(EFightBuffType.玩家,"1000:1","1000:10","1000")
    * ```
@@ -187,11 +176,9 @@ export interface NMCRunner {
    * @returns {Result}
    */
   AddFightBuff(target: EFightBuffType, ...buffList: string[]): Result;
-
   /**
    * 增加战斗Buff
    * 只有下一场战斗有效
-   * @date 2023/3/29 - 16:18:42
    * ```ts
    * runner.增加战斗Buff(EFightBuffType.玩家,"1000:1","1000:10","1000")
    * ```
@@ -204,7 +191,6 @@ export interface NMCRunner {
   /**
    * 设置战斗时玩家自定义立绘
    * 只有对同性的立绘参数有效
-   * @date 2023/3/29 - 16:29:41
    * ```ts
    *  runner.SetFightCustomFace(7200)
    * ```
@@ -212,11 +198,9 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetFightCustomFace(faceId: number): Result;
-
   /**
    * 设置战斗时玩家自定义立绘
    * 只有对同性的立绘参数有效
-   * @date 2023/3/29 - 16:29:41
    * ```ts
    *  runner.自定义战斗立绘(7200)
    * ```
@@ -224,4 +208,38 @@ export interface NMCRunner {
    * @returns {Result}
    */
   自定义战斗立绘(faceId: number): Result;
+
+  /**
+   * 在战斗时替换神通
+   *
+   * @param {number} oldSkillId 需要替换神通ID
+   * @param {number} newSkillId 替换新神通ID
+   * @returns {Result}
+   */
+  SetFightReplaceSkill(oldSkillId: number, newSkillId: number): Result;
+  /**
+   * 在战斗时替换神通 根据ID替换
+   *
+   * @param {number} oldSkillId 需要替换神通ID
+   * @param {number} newSkillId 替换新神通ID
+   * @returns {Result}
+   */
+  技能替换(oldSkillId: number, newSkillId: number): Result;
+
+  /**
+   * 在战斗时替换神通 根据名字替换
+   *
+   * @param {string} oldSkillName 需要替换神通名字
+   * @param {string} newSkillName 替换新神通名字
+   * @returns {Result}
+   */
+  SetFightReplaceSkillName(oldSkillName: string, newSkillName: string): Result;
+  /**
+   * 在战斗时替换神通 根据名字替换
+   *
+   * @param {string} oldSkillName 需要替换神通名字
+   * @param {string} newSkillName 替换新神通名字
+   * @returns {Result}
+   */
+  技能名字替换(oldSkillName: string, newSkillName: string): Result;
 }
