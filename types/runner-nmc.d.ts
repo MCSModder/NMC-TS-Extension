@@ -2,6 +2,7 @@
  * 封装自定义返回结果
  */
 type Result = Promise<void>;
+
 /**
  * 对话
  * ```typescript
@@ -34,6 +35,7 @@ type Say = {
     ...param: Parameters<(...s: any[]) => any>
   ): Result;
 };
+
 /**
  * 对话管理器类型
  * ```typescript
@@ -71,6 +73,7 @@ export interface NMCRunner {
    * tag 标签 {@link StoryManager}.
    */
   StoryManager: StoryManager;
+
   /**
    * 对话管理器
    * ```typescript
@@ -126,6 +129,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetDongFuJuLingZhen(id: number, level: EJuLingZhen): Result;
+
   /**
    * 设置聚灵阵
    *
@@ -134,6 +138,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   设置洞府聚灵阵(id: number, level: EJuLingZhen): Result;
+
   /**
    * 加载洞府
    *
@@ -141,6 +146,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetLoadDongFu(id: number): Result;
+
   /**
    * 加载洞府
    *
@@ -148,6 +154,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   加载洞府(id: number): Result;
+
   /**
    * 设置新洞府
    *
@@ -157,6 +164,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetNewDongFu(id: number, level: EJuLingZhen, name: string): Result;
+
   /**
    * 设置新洞府
    *
@@ -179,6 +187,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   AddFightBuff(target: EFightBuffType, ...buffList: string[]): Result;
+
   /**
    * 增加战斗Buff
    * 只有下一场战斗有效
@@ -203,6 +212,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetFightCustomFace(faceId: number): Result;
+
   /**
    * 设置战斗时玩家自定义立绘
    * 只有对同性的立绘参数有效
