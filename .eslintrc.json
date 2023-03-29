@@ -1,0 +1,41 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:@typescript-eslint/recommended"],
+  "overrides": [],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "plugins": ["@typescript-eslint"],
+  "rules": {
+    "indent": ["warn", 2],
+    "linebreak-style": ["error", "windows"],
+    "quotes": ["error", "double"],
+    "semi": ["error", "always"],
+    "no-extra-parens": "warn",
+    "default-case": "warn",
+    "eqeqeq": "warn",
+    "no-empty-function": "error",
+    "no-eq-null": "error",
+    "no-new-func": "error",
+    "no-useless-concat": "warn",
+    "array-bracket-spacing": ["warn", "never"],
+    "comma-dangle": "warn",
+    "eol-last": "error",
+    "multiline-comment-style": ["warn", "starred-block"],
+    "no-multiple-empty-lines": "error",
+    "no-trailing-spaces": "error",
+    "lines-between-class-members": [
+      "error",
+      "always",
+      { "exceptAfterSingleLine": true }
+    ],
+    "lines-around-comment": [
+      "error",
+      { "beforeBlockComment": true, "allowBlockStart": true }
+    ]
+  }
+}

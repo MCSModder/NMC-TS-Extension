@@ -8,5 +8,12 @@
   "dependencies": {
     "global": "^4.4.0",
     "typescript": "^5.0.2"
+  },
+  "devDependencies": {
+    "@eslint/create-config": "^0.4.2",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "^8.37.0",
+    "prettier": "^2.5.1"
   }
 }
