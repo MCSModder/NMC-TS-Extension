@@ -5,7 +5,7 @@ type Result = Promise<void>;
 /**
  * 对话
  * ```typescript
- * const { 测试 } = StoryManager;
+ * const { 旁白 } = StoryManager;
  * 旁白("测试文本")
  * 旁白`测试文本`
  * ```
@@ -37,7 +37,7 @@ type Say = {
 /**
  * 对话管理器类型
  * ```typescript
- * const { 测试 } = StoryManager;
+ * const { 旁白 } = StoryManager;
  * 旁白("测试文本")
  * 旁白`测试文本`
  * ```
@@ -53,7 +53,7 @@ export interface NMCRunner {
   /**
    * 对话管理器
    * ```typescript
-   * const { 测试 } = StoryManager;
+   * const { 旁白 } = StoryManager;
    * 旁白("测试文本")
    * 旁白`测试文本`
    * ```
@@ -63,7 +63,7 @@ export interface NMCRunner {
   /**
    * 对话管理器
    * ```typescript
-   * const { 测试 } = StoryManager;
+   * const { 旁白 } = StoryManager;
    * 旁白("测试文本")
    * 旁白`测试文本`
    * ```
