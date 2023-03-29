@@ -1,0 +1,12 @@
+{
+  "name": "nmc-ts",
+  "description": "The TS extension package of the NextMoreCommand",
+  "version": "1.0.0",
+  "main": "index.ts",
+  "author": "TierneyJohn",
+  "license": "ISC",
+  "dependencies": {
+    "global": "^4.4.0",
+    "typescript": "^5.0.2"
+  }
+}
