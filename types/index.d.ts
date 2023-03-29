@@ -1,4 +1,5 @@
 export { Relation, Death, TipIcon } from "./runner-base";
+export { EJuLingZhen, EFightBuffType } from "./runner-nmc";
 
 import { BaseEnv } from "./env-base";
 import { NMCEnv } from "./env-nmc";

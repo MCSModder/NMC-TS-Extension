@@ -46,6 +46,17 @@ type StoryManager = {
   [name in string]: Say;
 };
 
+export enum EJuLingZhen {
+  下品 = 1,
+  中品,
+  上品,
+}
+
+export enum EFightBuffType {
+  玩家,
+  敌方,
+}
+
 /**
  * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展
  */
@@ -106,18 +117,7 @@ export interface NMCRunner {
    * @returns 异步调用，需要添加 await 关键字
    */
   运行JavaScript(src: string, funcName: string): Result;
-}
-export enum EJuLingZhen {
-  下品 = 1,
-  中品,
-  上品,
-}
 
-export enum EFightBuffType {
-  玩家,
-  敌方,
-}
-interface NMCRunner {
   /**
    * 设置聚灵阵
    *
