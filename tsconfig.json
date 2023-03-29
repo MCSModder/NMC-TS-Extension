@@ -1,0 +1,25 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "types/**/*.d.ts",
+    "test/**/*.ts"
+  ],
+  "compilerOptions": {
+    "target": "es2016",
+    "moduleDetection": "auto",
+    "module": "commonjs",
+    "rootDir": "./",
+    "outDir": "./dist",
+    "noResolve": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "noImplicitThis": true,
+    "exactOptionalPropertyTypes": true,
+    "noImplicitOverride": true,
+    "skipLibCheck": true
+  }
+}
