@@ -1,5 +1,5 @@
 {
-  "name": "nmc-ts",
+  "name": "NMC-TS-Extension",
   "description": "The TS extension package of the NextMoreCommand",
   "version": "1.0.0",
   "main": "index.ts",
