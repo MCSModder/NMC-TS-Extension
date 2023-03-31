@@ -11,8 +11,7 @@ export const test = async (runner: Runner, env: Env) => {
   const key = env.GetInt("key");
   console.log(key);
   runner.AddRelation(2, 3);
-  runner.运行JS("index", "func");
-
+  //runner.运行JS("index", "func");
   // 写法1
   env.GetInt("测试").then((result) => {
     console.log(result);
