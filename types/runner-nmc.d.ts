@@ -3,6 +3,9 @@ import {
   EJuLingZhen,
   StoryManager,
   Result,
+  NpcDeathType,
+  EquipSlotType,
+  EShengWang,
 } from "./common-nmc";
 
 /**
@@ -122,5 +125,76 @@ export interface NMCRunner {
   SetNpcTeleport(sceneName: string, ...npcID: number[]): Result;
   AddNpcWudaoExp(npc: number, wudaoId: number, exp: number): Result;
   AddNpcWudaoSkill(npc: number, wudaoSkill: number): Result;
-  AddNpcWudaoSkill(npc: number, wudaoSkill: number): Result;
+  UpdateNpcWuDao(npc: number): Result;
+  AddNpcMoney(npc: number, money: number): Result;
+  SetNpcMoney(npc: number, money: number): Result;
+  SetNpcName(npc: number): Result;
+  SetNpcSelfName(npc: number): Result;
+  SetNpcName(npc: number, surname: string, name: string): Result;
+  AddNpcQingFen(npc: number, qingFen: number): Result;
+  NpcForceJiaoHu(npc: number): Result;
+  NpcForceJiaoTan(npc: number): Result;
+  NpcForceJiaoYi(npc: number): Result;
+  SetNpcXinQuType(npc: number, ...xinQuType: string[]): Result;
+  AddNpcXinQuType(npc: number, ...xinQuType: string[]): Result;
+  SetAllDaolvDeath(...filterNpc: number[]): Result;
+  SetFightFace(npc: number, fightFace: number): Result;
+  SetNpcFightFace(npc: number, show: boolean): Result;
+  SetNpcDeath(
+    deathType: NpcDeathType,
+    npcId: number,
+    killNpcId?: number,
+    after?: boolean
+  ): Result;
+  SetNpcFlyToSky(npc: number): Result;
+  SetNpcHuaShenTime(
+    npc: number,
+    year: number,
+    month: number,
+    day: number
+  ): Result;
+  SetNpcJinDanTime(
+    npc: number,
+    year: number,
+    month: number,
+    day: number
+  ): Result;
+  SetNpcYuanYingTime(
+    npc: number,
+    year: number,
+    month: number,
+    day: number
+  ): Result;
+  SetNpcZhuJiTime(
+    npc: number,
+    year: number,
+    month: number,
+    day: number
+  ): Result;
+  ChangeSelectTianFu(tianfuID: number, remove: boolean): Result;
+  ChangeTianFuBuff(tianfuID: number, remove: boolean): Result;
+  SetAllRemoveEquip(): Result;
+  SetIntGroup(group: string, key: string, value: number): Result;
+  SetStrGroup(group: string, key: string, value: string): Result;
+  SetNewTask(newTask: number): Result;
+  SetRecordShengPing(shengPingId: number, ...args: string[]): Result;
+  SetRemoveEquip(...type: EquipSlotType[]): Result;
+  SetShengWang(
+    num: number,
+    type: EShengWang,
+    id: number,
+    show?: boolean
+  ): Result;
+  SetShengWangDecrease(num: number, id: number, show?: boolean): Result;
+  SetShengWangIncrease(num: number, id: number, show?: boolean): Result;
+  SetTaskIndexFinish(taskID: number, index: number): Result;
+  SetTaskNext(taskID: number): Result;
+  SetTaskNext(mapIndex: number, sceneName: string, ...npcId: number[]): Result;
+  SetUIBlackMask(): Result;
+  ShowGaoshi(sceneName: string): Result;
+  ShowLianDanPanel(type: number): Result;
+  ShowLianQiPanel(type: number): Result;
+  ShowMenPaiShop(sceneName: string, isMoney: boolean, ratio: number): Result;
+  ShowMenPaiShop(itemID: string, price: number, limit: number): Result;
+  ShowOpenPanel(panelType: number, type: number): Result;
 }

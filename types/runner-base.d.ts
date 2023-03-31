@@ -130,7 +130,7 @@ export interface BaseRunner {
    * 若需要显示提示信息，需要同时修改 show 以及 info
    *
    * @param year 年
-   * @param mouth 月
+   * @param month 月
    * @param day 日
    * @param show 是否显示提示 (可选参数，默认不显示提示)
    * @param info 提示信息 (可选参数，默认提示信息为空)
@@ -138,7 +138,7 @@ export interface BaseRunner {
    */
   AddTime(
     year: number,
-    mouth: number,
+    month: number,
     day: number,
     show?: boolean,
     info?: string
