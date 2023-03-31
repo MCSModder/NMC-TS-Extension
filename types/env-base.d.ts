@@ -22,10 +22,20 @@ type Avatar = {};
 /**
  * 自定义字典类型
  */
-type Dictionary = {
-  [key: string]: number;
+type Dictionary<T> = {
+  [key: string]: T;
 };
-
+interface DateTime {
+  Now: DateTime;
+  Day: number;
+  Month: number;
+  Year: number;
+  DayOfYear: number;
+  Hour: number;
+  Minute: number;
+  Millisecond: number;
+  DayOfYear: number;
+}
 /**
  * 运行时脚本 - Next 内置
  */
@@ -199,7 +209,7 @@ export interface BaseEnv {
    *
    * @returns Args 参数字典
    */
-  tmpArgs(): Result<Dictionary>;
+  tmpArgs(): Result<Dictionary<int>>;
 
   /**
    * 获取一个随机数 (包含最小值，不包含最大值)
@@ -211,4 +221,63 @@ export interface BaseEnv {
    * @returns 随机结果
    */
   Random(min: number, max: number): Result<number>;
+  curDialogID(): Result<string>;
+  curDialogIndex(): Result<number>;
+  fightTags(): Result<string[]>;
+  customData(): Result<Dictionary<any>>;
+  GetLuaInt(src: string, funcName: string): Result<number>;
+  GetLuaStr(src: string, funcName: string): Result<string>;
+  GetBoolSetting(key: string): Result<boolean>;
+  GetIntSetting(key: string): Result<number>;
+  GetLongSetting(key: string): Result<bigint>;
+  GetFloatSetting(key: string): Result<number>;
+  GetDoubleSetting(key: string): Result<number>;
+  GetStringSetting(key: string): Result<string>;
+  Before(year: number, month: number, day: number): Result<boolean>;
+  After(year: number, month: number, day: number): Result<boolean>;
+  GetDateTime(year: number, month: number, day: number): Result<DateTime>;
+  GetNowTime(): Result<DateTime>;
+  HasSkill(skillID: number): Result<boolean>;
+  HasStaticSkill(skillID: number): Result<boolean>;
+  HasTrainSkill(skillID: number): Result<boolean>;
+  GetCall(man: string, woman: string): Result<string>;
+  GetCurScene(): Result<string>;
+  GetCurMapRoad(): Result<string>;
+  GetSceneName(sceneID: string): Result<string>;
+  GetRoadName(roadId: string): Result<string>;
+  GetMoney(): Result<bigint>;
+  GetHp(): Result<number>;
+  GetBaseHpMax(): Result<number>;
+  GetHpMax(): Result<number>;
+  GetMentality(): Result<number>;
+  GetDrugsPoison(): Result<number>;
+  GetComprehensionPoint(): Result<number>;
+  GetSex(): Result<number>;
+  GetInspiration(): Result<number>;
+  GetInspirationMax(): Result<number>;
+  GetAge(): Result<bigint>;
+  GetLife(): Result<bigint>;
+  GetTalent(): Result<number>;
+  GetBaseSpirit(): Result<number>;
+  GetSpirit(): Result<number>;
+  GetAbility(): Result<bigint>;
+  GetBaseMoveSpeed(): Result<number>;
+  GetMoveSpeed(): Result<number>;
+  GetLevel(): Result<number>;
+  GetLevelType(): Result<number>;
+  GetComprehensionExp(typeID: number): Result<number>;
+  GetCongenitalBuffCount(buffID: number): Result<number>;
+  GetItemNum(itemID: number): Result<number>;
+  GetNpcFav(npcId: number): Result<number>;
+  GetNpcSex(npcId: number): Result<number>;
+  GetNpcAge(npcId: number): Result<number>;
+  GetNpcLife(npcId: number): Result<number>;
+  GetNpcLevel(npcId: number): Result<number>;
+  GetNpcLevelType(npcId: number): Result<number>;
+  GetNpcSprite(npcId: number): Result<number>;
+  IsNpcDeath(npcId: number): Result<boolean>;
+  IsCouple(npcId: number): Result<boolean>;
+  IsTeacher(npcId: number): Result<boolean>;
+  IsBrother(npcId: number): Result<boolean>;
+  IsStudent(npcId: number): Result<boolean>;
 }
