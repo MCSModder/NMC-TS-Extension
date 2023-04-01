@@ -1,47 +1,4 @@
-/**
- * 封装自定义返回结果
- */
-type Result<T> = Promise<T>;
-
-/**
- * UINpcData 类型
- */
-type UINpcData = {
-  IsException: boolean;
-  ID: number;
-  UUID: string;
-  Tag: number;
-  IsGuDingNPC: boolean;
-};
-
-/**
- * KBEngine.Avatar 类型
- */
-type Avatar = {};
-
-/**
- * 自定义字典类型
- */
-type Dictionary<T> = {
-  [key: string]: T;
-};
-
-/**
- * 自定义封装 DateTime 数据
- *
- * 实际上前端使用 Date 进行接受即可
- */
-interface DateTime {
-  Now: DateTime;
-  Day: number;
-  Month: number;
-  Year: number;
-  DayOfYear: number;
-  Hour: number;
-  Minute: number;
-  Millisecond: number;
-  DayOfYear: number;
-}
+import type { Avatar, Dictionary, Result, UINpcData } from "./common";
 
 /**
  * 运行时脚本 - Next 内置
@@ -223,7 +180,7 @@ export interface BaseEnv {
    *
    * @returns Args 参数字典
    */
-  tmpArgs(): Result<Dictionary<int>>;
+  tmpArgs(): Result<Dictionary<string, number>>;
 
   /**
    * 获取一个随机数 (包含最小值，不包含最大值)
