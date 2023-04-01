@@ -44,13 +44,44 @@ yarn
 
 - 若您已经构建项目，则在项目编写完成后，可以通过运行如下命令，将 TypeScript 文件编译成压缩后的 JavaScript 文件
 
+> 使用 npm 进行构建
+
 ```sh
-tsc
+npm run tsc
+```
+
+> 使用 yarn 进行构建
+
+```sh
+yarn tsc
 ```
 
 最终导出的 JavaScript 文件路径如下： dist/src/*.js
 
 - 若您并未构建项目，那么可以通过在 Mod 制作群询问或直接寻求帮助的方式，请教他人如何编译 TypeScript 代码
+
+4. 生成 typedoc 文档
+
+项目内集成了 typedoc 模块，可以使用如下命令生成对应的 typedoc 文档
+
+> 使用 npm 进行构建
+
+```sh
+npm run typedoc
+```
+
+> 使用 yarn 进行构建
+
+```sh
+yarn typedoc
+```
+
+**注**: 项目文档默认包含所有的 types 类型导出，若您只想导出自己所编写的代码文档，可以参考如下方法修改导出配置
+
+```json
+# tsconfig.json --> typedocOptions/entryPoints
+"entryPoints": ["src/*.ts"]
+```
 
 ## 如何提供 TypeScript 类型扩展
 

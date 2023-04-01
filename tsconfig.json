@@ -17,5 +17,13 @@
     "exactOptionalPropertyTypes": true,
     "noImplicitOverride": true,
     "skipLibCheck": true
+  },
+  "typedocOptions": {
+    "entryPoints": ["src/*.ts", "test/*.ts", "types/*.d.ts"],
+    "includes": ["types"],
+    "out": "docs",
+    "readme": "none",
+    "includeVersion": true,
+    "disableSources": false
   }
 }
