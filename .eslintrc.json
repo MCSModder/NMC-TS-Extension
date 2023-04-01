@@ -35,11 +35,7 @@
     ],
     "lines-around-comment": [
       "error",
-      {
-        "beforeBlockComment": true,
-        "allowBlockStart": true,
-        "allowClassStart": true
-      }
+      { "beforeBlockComment": false, "allowObjectStart": true }
     ]
   }
 }
