@@ -2,6 +2,8 @@ export type * from "./common";
 export type * from "./runner-base";
 export type * from "./runner-nmc";
 
+export * from "./runner-base";
+
 // Next 相关指令
 import { BaseEnv } from "./env-base";
 import { BaseRunner } from "./runner-base";
