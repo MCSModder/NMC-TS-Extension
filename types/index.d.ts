@@ -1,9 +1,13 @@
-export { Relation, Death, TipIcon } from "./runner-base";
-export { EJuLingZhen, EFightBuffType } from "./runner-nmc";
+export type * from "./common";
+export type * from "./runner-base";
+export type * from "./runner-nmc";
 
+// Next 相关指令
 import { BaseEnv } from "./env-base";
-import { NMCEnv } from "./env-nmc";
 import { BaseRunner } from "./runner-base";
+
+// NMC 相关指令
+import { NMCEnv } from "./env-nmc";
 import { NMCRunner } from "./runner-nmc";
 
 declare global {
