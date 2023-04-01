@@ -49,6 +49,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetDongFuJuLingZhen(id: number, level: EJuLingZhen): Result;
+
   /**
    * 加载洞府
    *
@@ -56,6 +57,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetLoadDongFu(id: number): Result;
+
   /**
    * 设置新洞府
    *
@@ -97,6 +99,7 @@ export interface NMCRunner {
    * @returns {Result}
    */
   SetFightReplaceSkill(oldSkillId: number, newSkillId: number): Result;
+
   /**
    * 在战斗时替换神通 根据名字替换
    *
@@ -129,8 +132,8 @@ export interface NMCRunner {
   AddNpcMoney(npc: number, money: number): Result;
   SetNpcMoney(npc: number, money: number): Result;
   SetNpcName(npc: number): Result;
-  SetNpcSelfName(npc: number): Result;
   SetNpcName(npc: number, surname: string, name: string): Result;
+  SetNpcSelfName(npc: number): Result;
   AddNpcQingFen(npc: number, qingFen: number): Result;
   NpcForceJiaoHu(npc: number): Result;
   NpcForceJiaoTan(npc: number): Result;

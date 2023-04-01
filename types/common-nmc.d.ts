@@ -9,10 +9,12 @@ export enum EFightBuffType {
   玩家,
   敌方,
 }
+
 /**
  * 封装自定义返回结果
  */
 export type Result = Promise<void>;
+
 /**
  * 封装自定义返回结果
  */
@@ -28,6 +30,7 @@ export type Say = {
    * @param text 模板字符串数组
    */
   (text: string): Result;
+
   /**
    * StoryManager 标签 {@link StoryManager}.
    * ```typescript
@@ -38,6 +41,7 @@ export type Say = {
    * @param param
    */
   (template: TemplateStringsArray, ...param: unknown[]): Result;
+
   /**
    * StoryManager 标签 {@link StoryManager}.
    * ```typescript
@@ -48,6 +52,7 @@ export type Say = {
    */
   (template: TemplateStringsArray): Result;
 };
+
 /**
  * 对话管理器类型
  * ```typescript
@@ -59,6 +64,7 @@ export type Say = {
 export type StoryManager = {
   [name in string]: Say;
 };
+
 interface DialogTriggerOption {
   once: boolean;
   default: boolean;
@@ -68,6 +74,7 @@ interface DialogTriggerOption {
   priority: number;
   triggerEvent: string;
 }
+
 interface DialogTriggerData {
   Once: boolean;
   Default: boolean;
@@ -77,6 +84,7 @@ interface DialogTriggerData {
   Priority: number;
   TriggerEvent: string;
 }
+
 export enum NpcDeathType {
   无,
   寿元已尽,
@@ -92,6 +100,7 @@ export enum NpcDeathType {
   截杀时被反杀,
   飞升失败,
 }
+
 export enum EquipSlotType {
   灵舟 = 1,
   武器1 = 2,
@@ -99,10 +108,12 @@ export enum EquipSlotType {
   衣服 = 4,
   饰品 = 5,
 }
+
 export enum EShengWang {
   Increase,
   Decrease,
 }
+
 type Utils = {
   createOption(...args: Array<string>): string[];
   startDialogEvent(dialogEvent: string, env: BaseEnv): void;
