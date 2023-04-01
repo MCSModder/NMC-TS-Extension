@@ -57,5 +57,7 @@ declare namespace puer {
 
 import puerts = puer;
 
+// You can add BTCRunner extensions.
 export interface Runner extends BaseRunner, NMCRunner {}
+// You can add BTCEnv extensions.
 export interface Env extends BaseEnv, NMCEnv {}
