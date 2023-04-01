@@ -19,6 +19,7 @@ export interface NMC指令 {
    * tag 标签 {@link StoryManager}.
    */
   对话管理器: StoryManager;
+
   /**
    * 运行指定的 JavaScript 命令
    *
@@ -45,6 +46,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   设置洞府聚灵阵(id: number, level: EJuLingZhen): Result;
+
   /**
    * 加载洞府
    *
@@ -52,6 +54,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   加载洞府(id: number): Result;
+
   /**
    * 设置新洞府
    *
@@ -61,6 +64,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   设置新洞府(id: number, level: EJuLingZhen, name: string): Result;
+
   /**
    * 增加战斗Buff
    * 只有下一场战斗有效
@@ -72,6 +76,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   增加战斗Buff(target: EFightBuffType, ...buffList: string[]): Result;
+
   /**
    * 设置战斗时玩家自定义立绘
    * 只有对同性的立绘参数有效
@@ -82,6 +87,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   自定义战斗立绘(faceId: number): Result;
+
   /**
    * 在战斗时替换神通 根据ID替换
    *
@@ -90,6 +96,7 @@ export interface NMC指令 {
    * @returns {Result}
    */
   技能替换(oldSkillId: number, newSkillId: number): Result;
+
   /**
    * 在战斗时替换神通 根据名字替换
    *
