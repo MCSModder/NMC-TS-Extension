@@ -6,12 +6,12 @@ import {
   NpcDeathType,
   EquipSlotType,
   EShengWang,
-} from "./common-nmc";
-
+} from "./common";
+import { NMC指令 } from "./runnerChinese";
 /**
  * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展
  */
-export interface NMCRunner {
+export interface NMCRunner extends NMC指令 {
   /**
    * 对话管理器
    * ```typescript

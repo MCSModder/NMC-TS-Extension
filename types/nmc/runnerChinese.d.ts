@@ -1,9 +1,4 @@
-import {
-  EFightBuffType,
-  EJuLingZhen,
-  StoryManager,
-  Result,
-} from "./common-nmc";
+import { EFightBuffType, EJuLingZhen, StoryManager, Result } from "./common";
 
 /**
  * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展
