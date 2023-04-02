@@ -1,16 +1,11 @@
-export type * from "./common";
-export type * from "./runner-base";
-export type * from "./runner-nmc";
-
-export * from "./runner-base";
+export type * from "./base";
+export type * from "./nmc";
 
 // Next 相关指令
-import { BaseEnv } from "./env-base";
-import { BaseRunner } from "./runner-base";
+import { BaseEnv, BaseRunner } from "./base";
 
 // NMC 相关指令
-import { NMCEnv } from "./env-nmc";
-import { NMCRunner } from "./runner-nmc";
+import { NMCEnv, NMCRunner } from "./nmc";
 
 declare global {
   interface Runner extends BaseRunner, NMCRunner {}

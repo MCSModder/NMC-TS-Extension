@@ -585,4 +585,8 @@ export interface BaseEnv {
    * @returns 验证结果
    */
   IsStudent(npcId: number): Result<boolean>;
+  curDialogID(): Result<string>;
+  curDialogIndex(): Result<number>;
+  fightTags(): Result<string[]>;
+  customData(): Result<Dictionary<unknown>>;
 }
