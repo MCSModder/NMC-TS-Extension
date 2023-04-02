@@ -67,13 +67,13 @@ yarn tsc
 > 使用 npm 进行构建
 
 ```sh
-npm run typedoc
+npm run doc
 ```
 
 > 使用 yarn 进行构建
 
 ```sh
-yarn typedoc
+yarn doc
 ```
 
 **注**: 项目文档默认包含所有的 types 类型导出，若您只想导出自己所编写的代码文档，可以参考如下方法修改导出配置
