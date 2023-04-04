@@ -1,5 +1,5 @@
-export type * from "./base";
-export type * from "./nmc";
+export * from "./base";
+export * from "./nmc";
 
 // Next 相关指令
 import { BaseEnv, BaseRunner } from "./base";

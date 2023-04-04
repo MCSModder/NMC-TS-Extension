@@ -1,5 +1,9 @@
 import { EFightBuffType, EJuLingZhen, StoryManager, Result } from "./common";
-
+import { NMCRunnerNpc } from "./Npc";
+import { NMCRunnerFight } from "./Fight";
+import { NMCRunnerFungus } from "./Fungus";
+import { NMCRunnerDongFu } from "./DongFu";
+import { NMCRunnerUtils } from "./Utils";
 /**
  * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展
  */
