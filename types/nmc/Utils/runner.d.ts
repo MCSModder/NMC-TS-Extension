@@ -32,6 +32,11 @@ export interface NMCRunnerUtils {
    * @returns 异步调用，需要添加 await 关键字
    */
   RunJavaScript(src: string, funcName: string): Result;
+  /**
+   *
+   * @param tianfuID 天赋ID
+   * @param remove 是否移除
+   */
   ChangeSelectTianFu(tianfuID: number, remove: boolean): Result;
   ChangeTianFuBuff(tianfuID: number, remove: boolean): Result;
   SetAllRemoveEquip(): Result;

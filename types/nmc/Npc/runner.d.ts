@@ -153,6 +153,12 @@ export interface NMCRunnerNpc {
    */
   SetNpcFightFace(npc: number, show: boolean): Result;
   /**
+   * 给角色设置显示骨骼战斗立绘
+   * @param npc 角色编号
+   * @param show 是否显示
+   */
+  SetNpcFightSpine(npc: number, show: boolean): Result;
+  /**
    * 设置角色死亡
    * @param deathType 死亡类型
    * @param npcId 角色编号
