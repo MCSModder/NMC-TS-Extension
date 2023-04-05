@@ -107,51 +107,57 @@ export interface NMC指令角色 {
    * @param npc 角色编号
    * @param qingFen 情分值
    */
-  AddNpcQingFen(npc: number, qingFen: number): Result;
+  增加角色情分(npc: number, qingFen: number): Result;
   /**
    * 强制角色交互
    * @param npc 角色编号
    */
-  NpcForceJiaoHu(npc: number): Result;
+  角色强制交互(npc: number): Result;
   /**
    * 强制角色交谈
    * @param npc 角色编号
    */
-  NpcForceJiaoTan(npc: number): Result;
+  角色强制交谈(npc: number): Result;
   /**
    * 强制角色交易
    * @param npc 角色编号
    */
-  NpcForceJiaoYi(npc: number): Result;
+  角色强制交易(npc: number): Result;
   /**
    * 设置角色兴趣
    * @param npc 角色编号
    * @param xinQuType 兴趣列表
    */
-  SetNpcXinQuType(npc: number, ...xinQuType: string[]): Result;
+  设置角色兴趣类型(npc: number, ...xinQuType: string[]): Result;
   /**
    * 添加角色兴趣
    * @param npc 角色编号
    * @param xinQuType 兴趣列表
    */
-  AddNpcXinQuType(npc: number, ...xinQuType: string[]): Result;
+  添加角色兴趣类型(npc: number, ...xinQuType: string[]): Result;
   /**
    * 设置所有道侣死亡
    * @param filterNpc 需要过滤角色编号列表
    */
-  SetAllDaolvDeath(...filterNpc: number[]): Result;
+  设置所有道侣死亡(...filterNpc: number[]): Result;
   /**
    * 给角色设置战斗立绘
    * @param npc 角色编号
    * @param fightFace 战斗立绘
    */
-  SetFightFace(npc: number, fightFace: number): Result;
+  设置战斗立绘(npc: number, fightFace: number): Result;
   /**
    * 给角色设置显示静态战斗立绘
    * @param npc 角色编号
    * @param show 是否显示
    */
-  SetNpcFightFace(npc: number, show: boolean): Result;
+  设置角色战斗立绘(npc: number, show: boolean): Result;
+  /**
+   * 给角色设置显示骨骼战斗立绘
+   * @param npc 角色编号
+   * @param show 是否显示
+   */
+  设置角色战斗骨骼(npc: number, show: boolean): Result;
   /**
    * 设置角色死亡
    * @param deathType 死亡类型
@@ -159,7 +165,7 @@ export interface NMC指令角色 {
    * @param killNpcId 凶手编号
    * @param after 延期死亡
    */
-  SetNpcDeath(
+  设置角色死亡(
     deathType: NpcDeathType,
     npcId: number,
     killNpcId?: number,
@@ -169,7 +175,7 @@ export interface NMC指令角色 {
    * 设置角色是否飞升
    * @param npc 角色编号
    */
-  SetNpcFlyToSky(npc: number): Result;
+  设置角色飞升(npc: number): Result;
   /**
    * 设置角色化神保底
    * @param npc 角色编号
@@ -177,7 +183,7 @@ export interface NMC指令角色 {
    * @param month 月
    * @param day 日
    */
-  SetNpcHuaShenTime(
+  保送角色化神时间(
     npc: number,
     year: number,
     month: number,
@@ -190,7 +196,7 @@ export interface NMC指令角色 {
    * @param month 月
    * @param day 日
    */
-  SetNpcJinDanTime(
+  保送角色金丹时间(
     npc: number,
     year: number,
     month: number,
@@ -203,7 +209,7 @@ export interface NMC指令角色 {
    * @param month 月
    * @param day 日
    */
-  SetNpcYuanYingTime(
+  保送角色元婴时间(
     npc: number,
     year: number,
     month: number,
@@ -216,7 +222,7 @@ export interface NMC指令角色 {
    * @param month 月
    * @param day 日
    */
-  SetNpcZhuJiTime(
+  保送角色筑基时间(
     npc: number,
     year: number,
     month: number,

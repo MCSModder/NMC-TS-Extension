@@ -1,9 +1,9 @@
 import { Result, NpcDeathType, EJuLingZhen } from "../common";
 
 /**
- * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展 NPC相关
+ * 运行时指令调用对象方法扩展 - NextMoreCommand 扩展 洞府相关
  */
-export interface NMCRunnerDongFu {
+export interface NMC指令洞府 {
   /**
    * 设置聚灵阵
    *
@@ -11,7 +11,7 @@ export interface NMCRunnerDongFu {
    * @param {EJuLingZhen} level 聚灵阵等级
    * @returns {Result}
    */
-  SetDongFuJuLingZhen(id: number, level: EJuLingZhen): Result;
+  设置洞府聚灵阵(id: number, level: EJuLingZhen): Result;
 
   /**
    * 加载洞府
@@ -19,7 +19,7 @@ export interface NMCRunnerDongFu {
    * @param id 洞府ID
    * @returns {Result}
    */
-  SetLoadDongFu(id: number): Result;
+  加载洞府(id: number): Result;
 
   /**
    * 设置新洞府
@@ -29,5 +29,5 @@ export interface NMCRunnerDongFu {
    * @param name 洞府ID
    * @returns {Result}
    */
-  SetNewDongFu(id: number, level: EJuLingZhen, name: string): Result;
+  设置新洞府(id: number, level: EJuLingZhen, name: string): Result;
 }

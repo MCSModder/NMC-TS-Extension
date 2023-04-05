@@ -20,7 +20,7 @@ export type Result = Promise<void>;
  */
 export type Result<T> = Promise<T>;
 
-export type Say = {
+export interface Say {
   /**
    * StoryManager 标签 {@link StoryManager}.
    * ```typescript
@@ -51,7 +51,7 @@ export type Say = {
    * @param template 模板字符串数组
    */
   (template: TemplateStringsArray): Result;
-};
+}
 
 /**
  * 对话管理器类型
